@@ -1,0 +1,55 @@
+# Runtime artifacts
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+logs/
+shell-snapshots/
+session-env/
+*.jsonl
+
+# Sensitive data
+settings.json
+settings.local.json
+**/config/*
+!**/config/*.template.json
+!**/config/README.md
+
+# Personal data
+CLAUDE.md
+session-context.md
+
+# Cache and system files
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+*.swo
+*~
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Debug and test outputs
+debug/
+file-history/
+plans/
+projects/
+todos/
+archive/
+
+# MCP specific
+MCP-SERVERS.md

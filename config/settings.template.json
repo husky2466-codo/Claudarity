@@ -1,0 +1,51 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "acceptEdits"
+  },
+  "model": "sonnet",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/log-feedback.sh"
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/auto-create-todos-from-plan.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/stop-plan-sab.sh"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/backup-session-log.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash $HOME/.claude/statusline-p10k.sh"
+  },
+  "alwaysThinkingEnabled": false,
+  "mcpServers": {}
+}
