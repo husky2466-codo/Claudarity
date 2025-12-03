@@ -98,7 +98,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Credits
 
-Created by Nicolas Robert Myers (WOO WOO) as part of the Claude Code enhancement suite.
+Created by Nicolas Robert Myers as part of the Claude Code enhancement suite.
 
 ---
 

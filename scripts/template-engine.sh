@@ -2,7 +2,7 @@
 
 # Template Engine - Adaptive Template Learning System
 # Created: 2025-12-01
-# Author: WOO WOO (Nicolas Robert Myers)
+# Author: Nicolas Robert Myers
 
 set -e
 

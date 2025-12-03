@@ -60,12 +60,6 @@ Slash commands provide quick access to Claudarity features directly from the Cla
   ```
   Searches COOLFORK project's Playwright implementation and docs.
 
-- **/ntbk**: Backup current project to NIC THANGS drive
-  ```
-  /ntbk
-  ```
-  Creates backup of current project to MacMini backup repository.
-
 - **/ruby**: Add missing files to Xcode project
   ```
   /ruby
