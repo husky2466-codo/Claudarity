@@ -1,4 +1,4 @@
-# Claudarity
+# Claudarity V2.0
 
 A powerful memory and learning system for Claude Code that enables contextual awareness, feedback learning, and intelligent automation through hooks, scripts, and slash commands.
 
