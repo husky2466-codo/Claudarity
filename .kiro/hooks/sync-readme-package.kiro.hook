@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Sync README on Package Changes",
+  "description": "Checks if README needs updates when package.json is modified, ensuring documentation reflects current dependencies and scripts",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "package.json"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check if README needs updates for new dependencies or scripts in the modified package.json. Review the changes and update relevant documentation sections if needed."
+  }
+}

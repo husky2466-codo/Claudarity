@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Session Context Injection",
+  "description": "Automatically checks and loads relevant historical context from previous sessions when user submits a prompt, enabling continuity across conversations",
+  "version": "1",
+  "when": {
+    "type": "promptSubmit"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "bash scripts/auto-context-recall.sh"
+  }
+}

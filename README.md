@@ -1,15 +1,46 @@
 # Claudarity
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Status](https://img.shields.io/badge/status-archived-lightgrey.svg)
-![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
-![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey.svg)
+![Status](https://img.shields.io/badge/status-active--development-green.svg)
+![Version](https://img.shields.io/badge/version-2.0.0--alpha-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue.svg)
 
-> **This project is archived.** Claudarity was an early experiment (started 2024) in building a persistent memory and reinforcement learning system for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). It is no longer actively maintained, but is preserved here as a reference for anyone exploring similar ideas.
+> **Active Development:** Claudarity is being modernized from a bash-based system to a cross-platform TypeScript implementation for [Kiro](https://www.kiro.ai/). The legacy system (2024) is archived, but **Claudarity 2.0** is under active development. See [PROJECT_STATUS.md](PROJECT_STATUS.md) for current progress.
 
 ---
 
-## What Was This?
+## What's Happening Now?
+
+**Claudarity 2.0** is a complete rewrite in TypeScript, designed for [Kiro](https://www.kiro.ai/) with cross-platform support (Windows, macOS, Linux). The modernization follows a spec-driven development approach with:
+
+- **Cross-platform architecture**: Abstracts OS-specific operations (PowerShell/bash/zsh)
+- **Kiro-native integration**: Uses steering files instead of bash hooks
+- **Property-based testing**: 64 correctness properties validated with fast-check
+- **Privacy-first design**: All data remains local, no external transmission
+- **Maintained learning**: Multi-armed bandit reinforcement learning preserved
+
+### Current Status (February 2026)
+
+**Foundation Layer: 90% Complete**
+- ✅ Platform abstraction layer (OS detection, path handling, shell operations)
+- ✅ Database schema and Memory Store (SQLite with migrations)
+- ⏳ Export/import tests in progress
+- 📋 Full specification with 15 requirements and 64 correctness properties
+
+See [PROJECT_STATUS.md](PROJECT_STATUS.md) for detailed progress, architecture status, and next steps.
+
+### Quick Start (Development)
+
+```bash
+cd Claudarity-2.0
+npm install
+npm test          # Run all tests
+npm run build     # Compile TypeScript
+```
+
+---
+
+## What Was This? (Legacy System)
 
 Before Claude Code had built-in memory features, context management was entirely manual. Claudarity was an attempt to solve that problem -- a from-scratch memory layer built with bash hooks, SQLite, and pattern matching that sat on top of Claude Code and gave it the ability to:
 
@@ -21,17 +52,22 @@ The core idea was simple: if you tell an AI "great job on the error handling" en
 
 **It worked as a proof of concept.** The architecture -- non-blocking bash hooks, dual SQLite + Markdown storage, event-driven processing -- proved that persistent memory for AI coding assistants was both feasible and valuable.
 
-### Why It's Archived
+### Why Modernize?
 
-Claude Code now ships with built-in memory features -- `CLAUDE.md` files for project context, the `/memory` command for persistent preferences, and native session awareness. The core problems Claudarity set out to solve are handled natively today. The ideas explored here (session memory, preference learning, context injection) became standard features in the ecosystem.
+While Claude Code now has built-in memory features, Claudarity 2.0 explores advanced reinforcement learning and template evolution that go beyond basic memory. The modernization makes these capabilities:
+- **Cross-platform**: Works on Windows, macOS, and Linux
+- **Portable**: No hardcoded paths, configurable storage
+- **Testable**: Property-based testing ensures correctness
+- **Maintainable**: TypeScript with clear architecture
+- **Kiro-native**: Integrates via steering files and MCP servers
 
-This repository is preserved as a cleaned-up and documented snapshot of that early experiment.
+The legacy bash system proved the concept; Claudarity 2.0 makes it production-ready.
 
 ---
 
-## Architecture
+## Legacy Architecture (Archived)
 
-Claudarity consisted of four layers that hooked into Claude Code's lifecycle:
+The original Claudarity (2024) consisted of four layers that hooked into Claude Code's lifecycle:
 
 ```
 ~/.claude/
@@ -87,6 +123,15 @@ See [Architecture Decision Records](docs/adr/) for detailed rationale on each ch
 
 ## Documentation
 
+### Claudarity 2.0 (Active Development)
+- [Project Status](PROJECT_STATUS.md) -- Current progress, architecture status, next steps
+- [Requirements Specification](.kiro/specs/claudarity-modernization/requirements.md) -- 15 requirements with acceptance criteria
+- [Design Document](.kiro/specs/claudarity-modernization/design.md) -- Architecture, interfaces, 64 correctness properties
+- [Implementation Tasks](.kiro/specs/claudarity-modernization/tasks.md) -- 21 tasks with 100+ subtasks
+- [Claudarity 2.0 README](Claudarity-2.0/README.md) -- Quick start guide
+
+### Legacy System (Archived)
+
 This repository includes extensive documentation written during the cleanup phase:
 
 - [Project Summary](docs/SUMMARY.md) -- Full project overview, metrics, and lessons learned
@@ -95,7 +140,14 @@ This repository includes extensive documentation written during the cleanup phas
 - [Architecture Decision Records](docs/adr/) -- 8 ADRs covering all major design choices
 - [Documentation Map](DOCUMENTATION_MAP.md) -- Quick reference to all docs
 
-## Requirements (If Running Locally)
+## Requirements
+
+### Claudarity 2.0 (Active Development)
+- Node.js 20+
+- npm or yarn
+- Windows 10+, macOS 12+, or Linux (Ubuntu 20.04+)
+
+### Legacy System (If Running Locally)
 
 - Claude Code CLI
 - macOS or Linux
@@ -108,4 +160,5 @@ MIT License -- see [LICENSE](LICENSE) for details.
 
 ---
 
-**Originally built**: 2024 | **Documented and archived**: February 2026
+**Legacy system built**: 2024 | **Documented and archived**: February 2026  
+**Claudarity 2.0 modernization started**: January 2026 | **Status**: Active Development

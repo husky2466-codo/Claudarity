@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Build Check After Test Changes",
+  "description": "Verifies TypeScript compilation still works after editing test files, especially important for complex property-based tests",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "Claudarity-2.0/src/**/*.test.ts"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Run `npm run build` in the Claudarity-2.0 directory to verify the TypeScript compilation still works after the test file changes. Report any compilation errors."
+  }
+}

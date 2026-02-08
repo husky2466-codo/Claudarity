@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Pre-commit Validation",
+  "description": "Run full test suite, linting, and build checks before committing changes to ensure code quality and prevent broken commits",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Run the following checks in Claudarity-2.0 directory: 1) npm run lint to check code style, 2) npm test to run the full test suite, 3) npm run build to verify compilation. Report any errors found and suggest fixes if needed."
+  }
+}

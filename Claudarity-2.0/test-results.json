@@ -1,0 +1,5 @@
+
+> claudarity@2.0.0 test
+> vitest --run --reporter=json
+
+The CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.

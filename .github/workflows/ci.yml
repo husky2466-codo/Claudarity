@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [20.x]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: Claudarity-2.0/package-lock.json
+
+    - name: Install dependencies
+      working-directory: ./Claudarity-2.0
+      run: npm ci
+
+    - name: Run linter
+      working-directory: ./Claudarity-2.0
+      run: npm run lint
+
+    - name: Run tests
+      working-directory: ./Claudarity-2.0
+      run: npm test
+
+    - name: Build
+      working-directory: ./Claudarity-2.0
+      run: npm run build
+
+  coverage:
+    name: Code Coverage
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        cache-dependency-path: Claudarity-2.0/package-lock.json
+
+    - name: Install dependencies
+      working-directory: ./Claudarity-2.0
+      run: npm ci
+
+    - name: Run tests with coverage
+      working-directory: ./Claudarity-2.0
+      run: npm test -- --coverage
+
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v4
+      with:
+        files: ./Claudarity-2.0/coverage/coverage-final.json
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false

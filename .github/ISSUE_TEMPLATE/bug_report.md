@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a bug or issue with Claudarity
+about: Report a bug in Claudarity 2.0
 title: '[BUG] '
 labels: bug
 assignees: ''
@@ -8,76 +8,63 @@ assignees: ''
 
 ## Bug Description
 
-A clear and concise description of what the bug is.
+<!-- A clear and concise description of what the bug is -->
+
+## Component
+
+<!-- Which component is affected? -->
+
+- [ ] Platform Abstraction
+- [ ] Database Layer (Memory Store)
+- [ ] Configuration Management
+- [ ] Feedback Detector
+- [ ] Learning Engine
+- [ ] Template Evolver
+- [ ] Context Injector
+- [ ] MCP Server
+- [ ] Other (specify below)
 
 ## To Reproduce
 
 Steps to reproduce the behavior:
-1. Go to '...'
-2. Run command '...'
-3. See error
+1. 
+2. 
+3. 
 
 ## Expected Behavior
 
-A clear and concise description of what you expected to happen.
+<!-- What you expected to happen -->
 
 ## Actual Behavior
 
-What actually happened instead.
+<!-- What actually happened -->
 
 ## Environment
 
-- **OS**: [e.g., macOS 13.0, Ubuntu 22.04]
-- **Shell**: [e.g., bash 5.1, zsh 5.8]
-- **Claude Code Version**: [e.g., 1.2.3]
-- **Claudarity Version**: [e.g., 2.0.0]
-- **Python Version**: [e.g., 3.9.0] (if relevant)
+- OS: [e.g., Windows 11, macOS 14, Ubuntu 22.04]
+- Node.js version: [e.g., 20.10.0]
+- Claudarity version: [e.g., 2.0.0-alpha]
 
-## Logs
+## Test Output
 
-Please include relevant log files:
+<!-- If applicable, paste relevant test output or error messages -->
 
 ```
-# From ~/.claude/logs/error.log
-[paste error logs here]
+Error output here
 ```
-
-```
-# From ~/.claude/logs/debug.log
-[paste debug logs here]
-```
-
-## Database State
-
-If relevant, include database information:
-
-```bash
-sqlite3 ~/.claude/claudarity.db "SELECT COUNT(*) FROM feedback_entries;"
-# Output: [paste here]
-```
-
-## Configuration
-
-If relevant, include your configuration (remove sensitive data):
-
-```json
-{
-  "relevant": "config here"
-}
-```
-
-## Screenshots
-
-If applicable, add screenshots to help explain your problem.
 
 ## Additional Context
 
-Add any other context about the problem here.
+<!-- Any other context about the problem -->
 
-## Possible Solution
+## Related Requirements
 
-If you have ideas on how to fix this, please share them here.
+<!-- If this bug relates to specific requirements, list them here -->
 
-## Related Issues
+Requirements: 
 
-Link to any related issues: #123
+## Related Properties
+
+<!-- If this bug violates a correctness property, list them here -->
+
+Properties:
